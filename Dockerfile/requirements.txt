@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+torch
+torchvision
+ultralytics
+opencv-python
+pillow
+clip-anytorch
+python-dotenv
+pydantic
+numpy

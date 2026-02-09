@@ -1,19 +1,11 @@
 from fastapi import APIRouter
 from app.api.schemas import VisionRequest, VisionResponse
+from app.pipelines.vision_pipeline import run_pipeline
 
 router = APIRouter()
 
 @router.post("/analyze", response_model=VisionResponse)
-async def analyze_images(payload: VisionRequest):
-    # Temporary stub (no ML yet)
-    return {
-        "items": [
-            {
-                "label": "shirt",
-                "confidence": 0.98,
-                "bbox": [10,20,200, 300]
-            }
-        ]
-    }
+def analyze(req: VisionRequest):
+    return run_pipeline(req.image_url, req.doman)
 
     

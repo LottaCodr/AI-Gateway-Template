@@ -10,6 +10,10 @@ app = FastAPI(
 
 app.include_router(vision_router, prefix="/vision", tags=["Vision"])
 
+@app.get("/")
+def root():
+    return {"service": "Glimms AI Geteway", "status": "running"}
+
 @app.get("/health")
 def health_check():
     return {

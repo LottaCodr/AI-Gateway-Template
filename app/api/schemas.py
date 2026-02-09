@@ -3,7 +3,7 @@ from typing import Dict, List, Optional
 
 
 class VisionRequest(BaseModel):
-    image_urk: str
+    image_url: str
     domain: str #fashion | space | garden
 
 class VisionItem(BaseModel):

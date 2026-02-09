@@ -16,3 +16,4 @@ def health_check():
         "status": "ok",
         "service": "vision",
     }
+

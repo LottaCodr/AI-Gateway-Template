@@ -12,7 +12,7 @@ app.include_router(vision_router, prefix="/vision", tags=["Vision"])
 
 @app.get("/")
 def root():
-    return {"service": "Glimms AI Geteway", "status": "running"}
+    return {"service": "Glimms AI Gateway", "status": "running"}
 
 @app.get("/health")
 def health_check():

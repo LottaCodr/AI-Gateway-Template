@@ -1,17 +1,19 @@
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import Dict, List, Optional
 
-class ImageInput(BaseModel):
-    image_url: str
 
 class VisionRequest(BaseModel):
-    images: List[ImageInput]
-    task: Optional[str]= "full"
+    image_urk: str
+    domain: str #fashion | space | garden
 
-class DetectedItem(BaseModel):
-    label: str
-    confidence: float
-    bbox: List[int]
+class VisionItem(BaseModel):
+    category: str
+    attributes: Dict
+    style_tags: List[str]
+    embedding_id: str
+    bounding_box: List[float]
 
 class VisionResponse(BaseModel):
-    items: List[DetectedItem]
+    image_url: str
+    items: List[VisionItem]
+    

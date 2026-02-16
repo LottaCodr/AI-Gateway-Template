@@ -1,5 +1,5 @@
 from app.pipelines.vision_pipeline import run_pipeline
-from app.services.llm.services import enhance_with_llm
+from app.services.llm_service import enhance_with_llm
 
 def process_item(image_url: str, domain: str):
     """

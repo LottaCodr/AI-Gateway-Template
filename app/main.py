@@ -1,5 +1,6 @@
 from fastapi import FastAPI  
 from app.api.routes.vision import router as vision_router
+from app.api.routes.ai import router as ai_router
 
 
 app = FastAPI(
@@ -9,6 +10,7 @@ app = FastAPI(
 )
 
 app.include_router(vision_router, prefix="/vision", tags=["Vision"])
+app.include_router(ai_router, prefix="/ai")
 
 @app.get("/")
 def root():

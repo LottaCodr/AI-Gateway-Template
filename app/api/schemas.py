@@ -12,6 +12,7 @@ class VisionItem(BaseModel):
     style_tags: List[str]
     embedding_id: str
     bounding_box: List[float]
+    confidence: float
 
 class VisionResponse(BaseModel):
     image_url: str

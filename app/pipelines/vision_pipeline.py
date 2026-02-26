@@ -17,7 +17,9 @@ def run_pipeline(image_url: str, domain: str):
             "category": det.label,
             "attributes": attributes,
             "style_tags": style_tags,
-            "bounding_box": det.bbox
+            "bounding_box": det.bbox,
+            "confidence" : det.confidence,
+            "embedding_id": embedding_id
         })
 
     return {

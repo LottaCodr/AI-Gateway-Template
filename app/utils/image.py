@@ -5,8 +5,14 @@ from io import BytesIO
 
 def load_image(url: str):
     try:
+        if not url.startswith(("http://", "https://")):
+            raise ValueError("invalid Image URL")
+        headers = {
+            "User-Agent": "Glimms-Ai-Gateway"
+        }
         response = requests.get(url,  timeout=10)
         response.raise_for_status()
+
     except requests.exceptions.RequestException as e:
         raise ValueError(f"Failed to download image: { str(e)}")
 

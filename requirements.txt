@@ -9,3 +9,4 @@ clip-anytorch
 python-dotenv
 pydantic
 numpy
+open_clip_torch
